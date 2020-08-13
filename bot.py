@@ -7,9 +7,9 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from tweepy.auth import OAuthHandler
 
 # Authenticate to Twitter
-auth = OAuthHandler("C2n5gEgvpTp9wjryQ1lvZm64k", "Oqs68NjaNqHQ0R5KHLDNLOkrRt5VOAlKRVAp5U7Fff4XViaAcr")
-auth.set_access_token("1290484030756909060-OOOHsb5YCWqT2KYjPZDuezVtNCcyv0",
-                      "FScH0OukIM5FYobmUrlNkNulwj5ghkQ3VK4DFnZNfwubx")
+auth = OAuthHandler(API_KEY, API_SECRET_KEY)
+auth.set_access_token(ACCESS_TOKEN,
+                      ACCESS_SECRET_TOKEN)
 
 
 # # Create API object
@@ -18,16 +18,6 @@ data = dict()
 with open('verbs-dictionaries.json') as verb_json:
     data = json.load(verb_json)
 
-
-
-# API Key#C2n5gEgvpTp9wjryQ1lvZm64k
-# API Secret Key #Oqs68NjaNqHQ0R5KHLDNLOkrRt5VOAlKRVAp5U7Fff4XViaAcr
-# Bearer Token
-# #AAAAAAAAAAAAAAAAAAAAAHw1GgEAAAAA4KxhRXaOin0XfyuXYJAT%2FIkG51M%3DOPDstJThhwB28CUkwXkFKLGnShvMg1bl0nOueiZ8Y5cWx0jWsi
-# ACcess token
-# 1290484030756909060-OOOHsb5YCWqT2KYjPZDuezVtNCcyv0
-# Access Secret token
-# FScH0OukIM5FYobmUrlNkNulwj5ghkQ3VK4DFnZNfwubx
 # Create a tweet
 try:
     api.verify_credentials()
